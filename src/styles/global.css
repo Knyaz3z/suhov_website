@@ -1,0 +1,110 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');*/
+
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('./fonts/Montserrat-Light.woff2') format('woff2');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Ink Free';
+    src: url('./fonts/inkfree.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Mak';
+    src: url('./fonts/Mak.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Dune Rise';
+    src: url('./fonts/Dune_Rise.woff2') format('woff2');
+}
+
+:root {
+    /* Цвета */
+    --bg-color: #ECEBE6; /* Фон */
+    --text-main: #222222; /* Основной текст */
+    --text-secondary: #333333; /* Вторичный текст */
+    --accent-color: #9F463F; /* Акцентный цвет */
+
+    /* Шрифты */
+    --font-main: 'Montserrat Regular';
+    --font-decorative: 'Ink Free';
+    --font-heading: 'Mak';
+    --font-special: 'Dune Rise';
+
+    /* Тени и эффекты (можно добавить песчаные тени) */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
+
+    /* Размеры контейнера */
+    --container-width: 1200px;
+    --container-padding: 15px;
+}
+
+/* Базовые настройки страницы */
+body {
+    font-family: var(--font-main), sans-serif;
+    font-weight: 400;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-size: 20px;
+}
+
+/* Контейнер для контента */
+.container {
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), cursive;
+    font-size: 4em;
+    font-weight: 400;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+/* Декоративные элементы (например, для акцентов) */
+.decorative-text {
+    font-family: var(--font-decorative), cursive;
+}
+
+.special-text {
+    font-family: var(--font-special), serif;
+    letter-spacing: 0.05em;
+}
+
+/* Кнопки и акценты */
+.accent-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.accent-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sand);
+}

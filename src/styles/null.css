@@ -1,0 +1,56 @@
+/* Обнуление отступов и границ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Убираем стандартные стили списков */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Сброс стилей ссылок */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Наследование шрифтов для форм */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    background: transparent;
+}
+
+/* Убираем дефолтные стили кнопок */
+button {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+/* Изображения адаптивные */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Сброс таблиц */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Убираем дефолтный outline у интерактивных элементов */
+:focus-visible {
+    outline: none;
+}
