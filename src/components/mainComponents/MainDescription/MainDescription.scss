@@ -1,0 +1,102 @@
+.main__description {
+  background: url("/texture_sand_desc.webp") center/cover no-repeat;
+  width: 100%;
+  margin-top: 2em;
+  padding: 1.5em;
+
+}
+
+.description {
+
+  &__wrapper {
+
+    & h1 {
+      color: #333;
+      font-family: Montserrat;
+      font-size: 3.2em;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+
+      @media (max-width: 1072px) {
+        font-size: 2em;
+      }
+
+      @media (max-width: 578px) {
+        font-size: 1.5em;
+      }
+    }
+
+    & h3 {
+      margin-top: .5em;
+
+      @media (max-width: 768px){
+        font-size: 3em;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 2em;
+    display: flex;
+    gap: 1.5em;
+
+    @media (max-width: 1072px) {
+      flex-direction: column;
+      align-items: center;
+      font-size: .8em;
+    }
+
+    & img {
+      object-fit: cover;
+      max-width: 21em;
+      width: 100%;
+      border-radius: 20px;
+
+    }
+
+    &-text {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+
+
+      & div:first-child {
+        background-color: var(--accent-color);
+        color: #fafafa;
+        padding: 1.5em;
+        border-radius: 20px;
+      }
+
+      & div:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
+
+
+  &__work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-how {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: .5em 1em;
+      margin-top: 1em;
+      border-radius: 15px;
+      width: 100%;
+      background: #333;
+      color: #fafafa;
+      @media (max-width: 768px) {
+        font-size: .8em;
+      }
+    }
+  }
+
+
+}

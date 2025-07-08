@@ -42,7 +42,8 @@
     color: var(--bg-color);
 
     &:hover:not(.disabled) {
-      background-color: var(--accent-color);
+      background-color: #fafafa;
+      color: #222222;
       box-shadow: var(--shadow-sand);
     }
   }

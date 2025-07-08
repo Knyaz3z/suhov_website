@@ -3,6 +3,7 @@ import './styles/global.css'
 import Head from "./components/mainComponents/Head/Head";
 import About from "./components/mainComponents/About/About";
 import Scream from "./components/mainComponents/Scream/Scream";
+import MainDescription from "./components/mainComponents/MainDescription/MainDescription";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
                 <Head/>
                 <About/>
                 <Scream/>
+                <MainDescription/>
             </main>
         </>
     )
