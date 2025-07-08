@@ -1,0 +1,40 @@
+.scream{
+margin-top: 2em ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4em;
+
+  .scream__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Damn', serif;
+    font-size: 5em;
+    text-align: center;
+
+    & p:nth-child(2){
+      font-size: 9rem;
+    }
+
+    @media (max-width: 768px) {
+
+      font-size: 3em;
+
+      & p:nth-child(2){
+        font-size: 5rem;
+      }
+    }
+
+    & span {
+      color: var(--accent-color);
+    }
+  }
+
+  & img{
+    max-width: 60em;
+    width: 100%;
+  }
+}
