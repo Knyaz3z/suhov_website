@@ -1,0 +1,99 @@
+.main__numbers {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__numbers button{
+
+  margin-top: 5em;
+}
+
+.numbers {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    cursor: default;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  &__content {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 180px;
+      border: 3px solid var(--accent-color);
+      border-radius: 50%;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__value {
+    font-family: 'Damn', serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--text-main);
+    padding: 0 1rem;
+  }
+
+  &__description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    padding: 1rem;
+    color: var(--text-main);
+    max-width: 250px;
+  }
+
+  &__label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  // Стили при наведении
+  &__card.hovered {
+    .numbers__content::after {
+      width: calc(100% + 2rem);
+      height: auto;
+      aspect-ratio: 1/.5;
+      max-width: 300px;
+      max-height: 300px;
+      border-radius: 1rem;
+    }
+  }
+}
