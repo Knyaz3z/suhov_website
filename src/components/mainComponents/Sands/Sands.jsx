@@ -8,11 +8,11 @@ function Sands() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [modalId, setModalId] = useState(0);
 
-    function onGalleryItemClick(id){
+    function onGalleryItemClick(id) {
         setIsModalOpen(true);
         setModalId(id);
     }
-console.log(modalId);
+
     return (
         <div className='main__sands'>
             <div className="sands__wrapper container ">
@@ -31,7 +31,7 @@ console.log(modalId);
                         desc='Голос в зале'
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
-                        onGalleryItemClick={()=>onGalleryItemClick(0)}
+                        onGalleryItemClick={() => onGalleryItemClick(1)}
 
                     />
                     <SandsItem
@@ -41,7 +41,7 @@ console.log(modalId);
                         desc='Согласен'
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
-                        onGalleryItemClick={()=>onGalleryItemClick(1)}
+                        onGalleryItemClick={() => onGalleryItemClick(2)}
                     />
                     <SandsItem
                         title='Глава III'
@@ -50,7 +50,7 @@ console.log(modalId);
                         desc='Мои друзья'
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
-                        onGalleryItemClick={()=>onGalleryItemClick(2)}
+                        onGalleryItemClick={() => onGalleryItemClick(3)}
                     />
                 </div>
             </div>
@@ -79,14 +79,24 @@ function SandsItem({title, imgLink, desc, imgVideoLink, isModalOpen, setIsModalO
 }
 
 function GalleryModal({modalId, isModalOpen, setIsModalOpen}) {
+    const currentGallery = gallery.find(g => g.id === modalId);
+    const [imageIdOpen, setImageOpen] = useState(0);
+
+    function openImage(id) {
+        setImageOpen(id)
+    }
+
+    console.log(imageIdOpen);
+
     return (
         <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-            {gallery[modalId].items.map((img, index) => (
+            {currentGallery?.items.map((img) => (
                 <img
+                    onClick={() => openImage(img.id)}
                     key={img.id}
                     src={img.src}
                     alt={img.alt}
-                    loading="lazy"
+                    loading='lazy'
                 />
             ))}
         </Modal>
