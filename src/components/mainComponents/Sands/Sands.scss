@@ -1,0 +1,118 @@
+.main__sands {
+  background: url("/sands_of_memories_bg.webp") center/cover no-repeat;
+  padding: 2em 0;
+}
+
+.sands {
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h2 {
+      color: var(--accent-color);
+    }
+
+    &-ink {
+      font-family: 'Ink Free', sans-serif;
+      font-size: 1.5em;
+    }
+  }
+
+  &__wrapper {
+
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+  }
+
+  &__image-container {
+    overflow: hidden;
+    border-radius: 20px;
+
+    & img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+
+
+      &:hover {
+        transform: scale(1.05);
+
+      }
+    }
+
+
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    & h5 {
+      font-size: 2em;
+    }
+
+
+    &-photo {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #F4E0BF;
+      max-height: 24em;
+      border-radius: 20px;
+      padding: 1em 1.25em;
+      gap: 1em;
+      transition: .3s all ease;
+
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      }
+
+
+      & .desc {
+        font-family: 'Ink Free', sans-serif;
+        font-size: 2em;
+      }
+    }
+
+    &-video {
+      overflow: hidden;
+      position: relative;
+
+      .play__btn {
+        width: 5em;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &:hover{
+          transform: scale(1.05) translate(-45%, -45%);
+
+        }
+      }
+
+
+      & img {
+        width: 100%;
+        transition: .3s all ease;
+      }
+
+    }
+  }
+}
