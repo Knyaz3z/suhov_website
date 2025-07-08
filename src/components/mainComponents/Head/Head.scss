@@ -1,0 +1,232 @@
+// Переменные
+$bg-color: #ECEBE6;
+$text-main: #222222;
+$text-secondary: #333333;
+$accent-color: #9F463F;
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
+
+.main__head {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: $bg-color;
+  padding: 2rem;
+
+  &-wave {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.5;
+
+    &.top {
+      top: 0;
+      bottom: auto;
+      transform: rotate(180deg);
+    }
+  }
+
+  &-photo {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: $shadow-md;
+    filter: sepia(20%) brightness(95%);
+    transition: all 0.5s ease;
+    z-index: 1;
+
+    &.photo-1 {
+      top: 15%;
+      left: 10%;
+      transform: rotate(-5deg);
+      @media (max-width: 1180px) {
+        top: 5%;
+      }
+    }
+
+    &.photo-2 {
+      top: 20%;
+      right: 12%;
+      transform: rotate(3deg);
+      @media (max-width: 1180px) {
+        top: 5%;
+      }
+    }
+
+    &.photo-3 {
+      bottom: 15%;
+      left: 20%;
+      transform: rotate(-8deg);
+
+      @media (max-width: 1530px) {
+        bottom: 0%;
+      }
+    }
+
+    &.photo-4 {
+      bottom: 20%;
+      right: 20%;
+      transform: rotate(5deg);
+      @media (max-width: 1530px) {
+        bottom: 0%;
+      }
+    }
+
+    &.photo-5 {
+      top: 50%;
+      left: 5%;
+      transform: rotate(-10deg);
+    }
+
+    &.photo-6 {
+      top: 50%;
+      right: 5%;
+      transform: rotate(10deg);
+    }
+
+    &:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: $shadow-sand;
+      filter: sepia(0%) brightness(100%);
+      z-index: 2;
+    }
+  }
+
+  &-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+  }
+
+  &-block {
+    flex: 1;
+
+    &.left {
+      text-align: right;
+    }
+
+    &.right {
+      text-align: left;
+    }
+
+    h1, h2 {
+      font-family: 'Mak', serif;
+      font-size: 4rem;
+      color: $accent-color;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+  }
+
+  &-divider {
+    height: 120px;
+    width: 2px;
+    opacity: 0.5;
+  }
+}
+
+// Анимации
+.main__head-photo {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+
+  @for $i from 1 through 6 {
+    &.photo-#{$i} {
+      animation-delay: 0.1s * $i;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// Адаптивность
+.main__head-photo {
+  @media (max-width: 728px){
+    max-width: 150px;
+    max-height: 250px;
+  }
+  
+  @media (max-width: 550px) {
+    max-width: 140px;
+    max-height: 180px;
+  }
+
+  @media (max-width: 438px) {
+    &.photo-4{
+      bottom: 10%;
+      right: 5%;
+    }
+
+    &.photo-3{
+      bottom: 10%;
+      left: 5%;
+    }
+    &.photo-1{
+      top: 10%;
+    }
+    &.photo-2{
+      top: 10%;
+    }
+  }
+
+
+
+}
+
+@media (max-width: 1175px) {
+  .main__head {
+    padding: 1rem;
+
+    &-photo {
+
+
+      &.photo-5, &.photo-6 {
+        display: none;
+      }
+    }
+
+    &-block {
+      h1, h2 {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    &-divider {
+      height: 80px;
+    }
+  }
+}

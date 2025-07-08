@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: 'Ink Free';
-    src: url('./fonts/inkfree.woff2') format('woff2');
+    src: url('./fonts/Inkfree.ttf') format('woff2');
 }
 @font-face {
     font-family: 'Mak';
@@ -29,6 +29,11 @@
 @font-face {
     font-family: 'Dune Rise';
     src: url('./fonts/Dune_Rise.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Damn';
+    src: url('./fonts/DAMN.woff2') format('woff2');
 }
 
 :root {
@@ -50,7 +55,7 @@
     --shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
 
     /* Размеры контейнера */
-    --container-width: 1200px;
+    --container-width: 1280px;
     --container-padding: 15px;
 }
 

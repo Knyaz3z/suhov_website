@@ -1,0 +1,144 @@
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em var(--container-padding);
+
+  &__wrapper {
+    background: url("/about_bg.webp") center/cover no-repeat;
+    width: 100%;
+  }
+
+  &__glass {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 2em 0;
+    max-width: 20em;
+    width: 100%;
+    max-height: none;
+
+    @media (min-width: 1177px) {
+      position: absolute;
+      bottom: 0;
+      right: 21%;
+      max-width: 20em;
+      max-height: 25em;
+    }
+  }
+
+  &__content {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2em;
+
+    @media (min-width: 992px) {
+      order: initial;
+      max-width: 30em;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: .8em;
+    @media (min-width: 576px) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__text {
+    font-size: 2em;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    @media (min-width: 768px) {
+      font-size: 3em;
+    }
+    @media (min-width: 1280px) {
+      font-size: 4em;
+    }
+  }
+
+  & img {
+    order: 2;
+    width: 100%;
+    max-width: 500px;
+    margin: 2em 0;
+    @media (min-width: 992px) {
+      order: initial;
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  & p {
+    order: 3;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    text-align: center;
+    margin-top: 1em;
+    width: 100%;
+    font-family: var(--font-decorative), serif;
+    @media (min-width: 1172px) {
+      position: absolute;
+      bottom: 4%;
+      right: 0;
+      text-align: right;
+      width: auto;
+    }
+  }
+
+  @media (min-width: 1177px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
+  }
+}
+
+.about__glass {
+  padding: 1em;
+  border-radius: 1em;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 30.5px 1px rgba(0,0,0,.25);
+  order: 4;
+  margin-top: 2em;
+
+  &-content {
+    font-size: 0.9em;
+    @media (min-width: 576px) {
+      font-size: 1em;
+    }
+  }
+
+  span {
+    font-size: 1.5em;
+    font-family: 'Ink Free', serif;
+    @media (min-width: 768px) {
+      font-size: 2em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    order: initial;
+    margin-top: 0;
+  }
+}
+
+// Кнопка
+.button {
+  width: 100%;
+  margin-top: 2em;
+  @media (min-width: 576px) {
+    width: auto;
+    min-width: 300px;
+
+  }
+}
