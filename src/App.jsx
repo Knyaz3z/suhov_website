@@ -13,6 +13,7 @@ import {useState} from "react";
 import Modal from "./components/Modal/Modal";
 import Present from "./components/mainComponents/Present/Present";
 import MainApl from "./components/mainComponents/MainApl/MainApl";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -55,6 +56,8 @@ function App() {
                 <h3 className='main__apl-head container'>Отправьте послание сквозь Пространство</h3>
                 <MainApl/>
             </main>
+
+            <Footer/>
         </>
     )
 }

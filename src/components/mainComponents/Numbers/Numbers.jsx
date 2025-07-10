@@ -1,6 +1,7 @@
 import './Numbers.scss';
 import { useState } from "react";
 import Button from "../../Button/Button";
+import Modal from "../../Modal/Modal";
 
 function Numbers() {
     const numbersArr =  [
@@ -35,11 +36,26 @@ function Numbers() {
             text: 'Звонков',
         },
     ];
-
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
         <div className="main__numbers">
+
+            <Modal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                type='apl'
+            >
+                <form className='services__apl' action="">
+                    <p>Оставьте заявку и мы с вами свяжемся</p>
+                    <input type="text" placeholder='Ваше имя'/>
+                    <input type="text" placeholder='Номер телефона'/>
+                    <input type="text" placeholder='Email'/>
+                    <input type="text" placeholder='Сообщение'/>
+                    <button type='submit'>Отправить заявку</button>
+                </form>
+            </Modal>
             <div className="numbers__wrapper container">
                 {numbersArr.map((item, index) => (
                     <div
@@ -62,7 +78,7 @@ function Numbers() {
                 ))}
 
             </div>
-            <Button variant='primary' title='Получить уникальное предложение'/>
+            <Button onClick={()=>setIsModalOpen(true)} variant='primary' title='Получить уникальное предложение'/>
         </div>
     );
 }

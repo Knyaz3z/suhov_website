@@ -2,9 +2,10 @@ import './MainDescription.scss'
 import Button from "../../Button/Button";
 import {useState} from "react";
 import {motion} from "motion/react"
+import Modal from "../../Modal/Modal";
 
 function MainDescription() {
-
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const stages =
         [
             {
@@ -37,6 +38,20 @@ function MainDescription() {
 
     return (
         <div className='main__description'>
+            <Modal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                type='apl'
+            >
+                <form className='services__apl' action="">
+                    <p>Оставьте заявку и мы с вами свяжемся</p>
+                    <input type="text" placeholder='Ваше имя'/>
+                    <input type="text" placeholder='Номер телефона'/>
+                    <input type="text" placeholder='Email'/>
+                    <input type="text" placeholder='Сообщение'/>
+                    <button type='submit'>Отправить заявку</button>
+                </form>
+            </Modal>
             <div className="description__wrapper container">
                 <h1>Анатолий Сухов — профессиональный ведущий мероприятий в Москве: свадьбы, дни рождения,
                     корпоративы</h1>
@@ -78,7 +93,8 @@ function MainDescription() {
                     }
                     {
                         isNumberVis === 5 ? (
-                            <Button onClick={null} title='Заказать мероприятие' variant='primary'/>
+                            <Button onClick={() => setIsModalOpen(true)} title='Заказать мероприятие'
+                                    variant='primary'/>
                         ) : (
                             <Button onClick={setNumber} title='А дальше?' variant='primary'/>
                         )
