@@ -6,6 +6,7 @@ import Scream from "./components/mainComponents/Scream/Scream";
 import MainDescription from "./components/mainComponents/MainDescription/MainDescription";
 import Numbers from "./components/mainComponents/Numbers/Numbers";
 import Sands from "./components/mainComponents/Sands/Sands";
+import Faq from "./components/mainComponents/Faq/Faq";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                 <MainDescription/>
                 <Numbers/>
                 <Sands/>
+                <Faq/>
             </main>
         </>
     )
