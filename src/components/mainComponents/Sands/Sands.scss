@@ -5,6 +5,8 @@
 
 .sands {
 
+
+
   &__head {
     display: flex;
     flex-direction: column;
@@ -13,6 +15,10 @@
 
     & h2 {
       color: var(--accent-color);
+      text-align: center;
+      @media (max-width: 624px) {
+        font-size: 2em;
+      }
     }
 
     &-ink {
@@ -22,7 +28,7 @@
   }
 
   &__wrapper {
-
+    text-align: center;
   }
 
   &__inner {
@@ -56,10 +62,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    gap: 1em;
 
     & h5 {
       font-size: 2em;
+      @media (max-width: 545px) {
+        font-size: 1.5em;
+      }
     }
 
 
@@ -86,6 +95,10 @@
       & .desc {
         font-family: 'Ink Free', sans-serif;
         font-size: 2em;
+
+        @media (max-width: 545px) {
+          font-size: 1em;
+        }
       }
     }
 
@@ -101,7 +114,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        &:hover{
+        @media (max-width: 545px) {
+          width: 40px;
+        }
+
+        &:hover {
           transform: scale(1.05) translate(-45%, -45%);
 
         }
@@ -115,4 +132,168 @@
 
     }
   }
+
+  &__image-modal {
+
+  }
 }
+
+//MODAL
+
+.img {
+  &__modal {
+    &-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.92);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    &-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      transform: scale(0.95);
+      opacity: 0;
+      animation: zoomIn 0.3s 0.1s ease-out forwards;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(0.97);
+      }
+    }
+
+    &-close {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+
+      svg {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+
+        svg {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+
+      &.prev {
+        left: 30px;
+      }
+
+      &.next {
+        right: 30px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      &:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .img__modal {
+    &-close {
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+
+      &.prev {
+        left: 10px;
+      }
+
+      &.next {
+        right: 10px;
+      }
+    }
+
+    &-img {
+      max-width: 100vw;
+      max-height: 80vh;
+    }
+  }
+}
+

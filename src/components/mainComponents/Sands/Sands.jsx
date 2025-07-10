@@ -81,12 +81,26 @@ function SandsItem({title, imgLink, desc, imgVideoLink, isModalOpen, setIsModalO
 function GalleryModal({modalId, isModalOpen, setIsModalOpen}) {
     const currentGallery = gallery.find(g => g.id === modalId);
     const [imageIdOpen, setImageOpen] = useState(0);
+    const [isModalImgOpen, setIsModalImgOpen] = useState(false)
 
     function openImage(id) {
-        setImageOpen(id)
+        setIsModalImgOpen(true)
+        setImageOpen(id - 1)
     }
 
-    console.log(imageIdOpen);
+    const nextImage = () => {
+        setImageOpen(prev =>
+            (prev + 1) % currentGallery.items.length
+        );
+    };
+
+    const prevImage = () => {
+        setImageOpen(prev =>
+            (prev - 1 + currentGallery.items.length) % currentGallery.items.length
+        );
+    };
+
+    if (!currentGallery) return null;
 
     return (
         <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
@@ -99,6 +113,36 @@ function GalleryModal({modalId, isModalOpen, setIsModalOpen}) {
                     loading='lazy'
                 />
             ))}
+
+            {
+                isModalImgOpen ? (
+                    <div className="img__modal-overlay">
+                        <div className="img__modal">
+                            <button
+                                onClick={() => setIsModalImgOpen(false)}
+                                className="img__modal-close"
+                                aria-label="Закрыть модальное окно"
+                            >
+                                <svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd"
+                                          d="M4.11 2.697L2.698 4.11 6.586 8l-3.89 3.89 1.415 1.413L8 9.414l3.89 3.89 1.413-1.415L9.414 8l3.89-3.89-1.415-1.413L8 6.586l-3.89-3.89z"
+                                          fill="#000"></path>
+                                </svg>
+                            </button>
+                            <button onClick={prevImage} className="img__modal-btn prev">
+                                ←
+                            </button>
+
+                            <img className='img__modal-img' src={currentGallery?.items[imageIdOpen].src} alt=""/>
+                            <button onClick={nextImage} className="img__modal-btn next">
+                                →
+                            </button>
+                        </div>
+                    </div>
+                ) : (null)
+            }
+
+
         </Modal>
     )
 }
