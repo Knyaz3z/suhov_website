@@ -97,4 +97,9 @@
       transform: translateY(calc(100% + 60px));
     }
   }
+
+  &.small{
+    max-width: 17.3em;
+    max-height: 4em;
+  }
 }

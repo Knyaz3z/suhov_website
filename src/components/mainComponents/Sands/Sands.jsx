@@ -103,7 +103,7 @@ function GalleryModal({modalId, isModalOpen, setIsModalOpen}) {
     if (!currentGallery) return null;
 
     return (
-        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} type='gallery'>
             {currentGallery?.items.map((img) => (
                 <img
                     onClick={() => openImage(img.id)}

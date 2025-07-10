@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './Modal.scss';
 
-function Modal({ children, isModalOpen, setIsModalOpen }) {
+function Modal({ children, isModalOpen, setIsModalOpen, type }) {
     // Блокировка скролла при открытии модалки
     useEffect(() => {
         if (isModalOpen) {
@@ -40,7 +40,7 @@ function Modal({ children, isModalOpen, setIsModalOpen }) {
                               fill="#000"></path>
                     </svg>
                 </button>
-                <div className="modal__inner">
+                <div className={`modal__inner ${type}`}>
                     {children}
                 </div>
             </div>
