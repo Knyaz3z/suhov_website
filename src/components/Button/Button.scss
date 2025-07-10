@@ -37,6 +37,16 @@
     }
   }
 
+  &.dark{
+    background-color: #222;
+    color: #fafafa;
+    &:hover:not(.disabled) {
+      background-color: #fafafa;
+      color: #222222;
+      box-shadow: var(--shadow-sand);
+    }
+  }
+
   &.primary {
     background-color: var(--accent-color);
     color: var(--bg-color);

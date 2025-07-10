@@ -132,3 +132,10 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: -.5em;
     }
 }
+
+.main__apl-head{
+    font-size: 3em;
+    color: var(--accent-color);
+    font-family: var(--font-decorative), serif;
+    text-align: center;
+}

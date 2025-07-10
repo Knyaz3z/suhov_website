@@ -12,6 +12,7 @@ import Button from "./components/Button/Button";
 import {useState} from "react";
 import Modal from "./components/Modal/Modal";
 import Present from "./components/mainComponents/Present/Present";
+import MainApl from "./components/mainComponents/MainApl/MainApl";
 
 function App() {
 
@@ -46,12 +47,13 @@ function App() {
                         Это то, что остается в памяти
                     </p>
                     <Button
-                        onClick={()=>setIsModalOpen(true)}
+                        onClick={() => setIsModalOpen(true)}
                         title='Создать атмосферу вместе'
                         variant='primary'/>
                 </div>
                 <Present/>
-
+                <h3 className='main__apl-head container'>Отправьте послание сквозь Пространство</h3>
+                <MainApl/>
             </main>
         </>
     )

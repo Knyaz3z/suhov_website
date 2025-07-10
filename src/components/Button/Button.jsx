@@ -7,11 +7,12 @@ function Button({
                     onClick,
                     variant,
                     size,
-                    disabled
+                    disabled,
+                    color
                 }) {
     return (
         <button
-            className={`button ${variant} ${size} ${disabled ? 'disabled' : ''}`}
+            className={`button ${color} ${variant} ${size} ${disabled ? 'disabled' : ''}`}
             onClick={onClick}
             disabled={disabled}
         >
