@@ -55,6 +55,7 @@ $shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
     &.photo-2 {
       top: 20%;
       right: 12%;
+      z-index: 0;
       transform: rotate(3deg);
       @media (max-width: 1180px) {
         top: 5%;
@@ -96,7 +97,7 @@ $shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
       transform: rotate(0deg) scale(1.05);
       box-shadow: $shadow-sand;
       filter: sepia(0%) brightness(100%);
-      z-index: 2;
+
     }
   }
 
@@ -121,6 +122,10 @@ $shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
 
     &.left {
       text-align: right;
+
+      span{
+        white-space: nowrap;
+      }
     }
 
     &.right {

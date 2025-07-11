@@ -1,10 +1,11 @@
 import './Numbers.scss';
-import { useState } from "react";
+import {useState} from "react";
 import Button from "../../Button/Button";
 import Modal from "../../Modal/Modal";
+import FormApl from "../../FormApl/FormApl";
 
 function Numbers() {
-    const numbersArr =  [
+    const numbersArr = [
         {
             number: '87',
             onHover: 'и в ней был смысл. Не каждый ведущий на это способен.',
@@ -47,14 +48,7 @@ function Numbers() {
                 setIsModalOpen={setIsModalOpen}
                 type='apl'
             >
-                <form className='services__apl' action="">
-                    <p>Оставьте заявку и мы с вами свяжемся</p>
-                    <input type="text" placeholder='Ваше имя'/>
-                    <input type="text" placeholder='Номер телефона'/>
-                    <input type="text" placeholder='Email'/>
-                    <input type="text" placeholder='Сообщение'/>
-                    <button type='submit'>Отправить заявку</button>
-                </form>
+                <FormApl head={true}/>
             </Modal>
             <div className="numbers__wrapper container">
                 {numbersArr.map((item, index) => (
@@ -78,7 +72,7 @@ function Numbers() {
                 ))}
 
             </div>
-            <Button onClick={()=>setIsModalOpen(true)} variant='primary' title='Получить уникальное предложение'/>
+            <Button onClick={() => setIsModalOpen(true)} variant='primary' title='Получить уникальное предложение'/>
         </div>
     );
 }

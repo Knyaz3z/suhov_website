@@ -3,6 +3,16 @@
 .main__presents {
   padding: 80px 0;
   color: #222;
+
+  p {
+    font-size: 2em;
+    font-family: var(--font-heading), serif;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
+  }
 }
 
 .presents-heading {
@@ -13,6 +23,8 @@
   margin-bottom: 60px;
   color: #222;
   position: relative;
+
+
 
   &::after {
     content: '';
@@ -98,6 +110,8 @@
   flex-grow: 1;
 }
 
+
+
 // Стили для модального окна
 .presents__apl {
   display: flex;
@@ -109,46 +123,7 @@
     font-size: .8em;
   }
 
-  p {
-    font-size: 2em;
-    font-family: var(--font-heading), serif;
-    text-align: center;
 
-    @media (max-width: 768px) {
-      font-size: 1.5em;
-    }
-  }
-
-  input {
-    background-color: #D0B898;
-    border-radius: 30px;
-    padding: 1em;
-    max-width: 30em;
-    width: 100%;
-  }
-
-  & button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-    padding: 1em;
-    border-radius: 15px;
-    border: 2px solid var(--accent-color);
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    font-weight: 500;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-
-    &:hover:not(.disabled) {
-      background-color: #fafafa;
-      color: #222222;
-      box-shadow: var(--shadow-sand);
-    }
-  }
 
 }
 

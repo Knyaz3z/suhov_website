@@ -14,6 +14,7 @@ import Modal from "./components/Modal/Modal";
 import Present from "./components/mainComponents/Present/Present";
 import MainApl from "./components/mainComponents/MainApl/MainApl";
 import Footer from "./components/Footer/Footer";
+import FormApl from "./components/FormApl/FormApl";
 
 function App() {
 
@@ -25,14 +26,7 @@ function App() {
                 setIsModalOpen={setIsModalOpen}
                 type='apl'
             >
-                <form className='services__apl' action="">
-                    <p>Оставьте заявку и мы с вами свяжемся</p>
-                    <input type="text" placeholder='Ваше имя'/>
-                    <input type="text" placeholder='Номер телефона'/>
-                    <input type="text" placeholder='Email'/>
-                    <input type="text" placeholder='Сообщение'/>
-                    <button type='submit'>Отправить заявку</button>
-                </form>
+                <FormApl head={true}/>
             </Modal>
             <main>
                 <Head/>

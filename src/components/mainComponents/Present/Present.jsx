@@ -2,6 +2,7 @@ import './Present.scss';
 import Button from "../../Button/Button";
 import Modal from "../../Modal/Modal";
 import {useState} from "react";
+import FormApl from "../../FormApl/FormApl";
 
 function Present() {
     const presentArr = [
@@ -32,16 +33,11 @@ function Present() {
         <div className='main__presents'>
             <h2 className="presents-heading">Все любят подарки, забирай свой</h2>
             <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} type='apl'>
-                <form className='presents__apl' action="">
                     <p>Оставьте заявку и
                         получите: <strong>{selectedGift !== null && presentArr[selectedGift].title}</strong></p>
-                    <input type="text" placeholder='Ваше имя' required/>
-                    <input type="tel" placeholder='Номер телефона' required/>
-                    <input type="email" placeholder='Email'/>
+                    <FormApl head={false}/>
                     <input type="hidden" name="gift"
                            value={selectedGift !== null ? presentArr[selectedGift].title : ''}/>
-                    <button type='submit'>Получить подарок</button>
-                </form>
             </Modal>
 
             <div className="presents__wrapper ">

@@ -3,6 +3,7 @@ import Button from "../../Button/Button";
 import {useState} from "react";
 import {motion} from "motion/react"
 import Modal from "../../Modal/Modal";
+import FormApl from "../../FormApl/FormApl";
 
 function MainDescription() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -43,14 +44,7 @@ function MainDescription() {
                 setIsModalOpen={setIsModalOpen}
                 type='apl'
             >
-                <form className='services__apl' action="">
-                    <p>Оставьте заявку и мы с вами свяжемся</p>
-                    <input type="text" placeholder='Ваше имя'/>
-                    <input type="text" placeholder='Номер телефона'/>
-                    <input type="text" placeholder='Email'/>
-                    <input type="text" placeholder='Сообщение'/>
-                    <button type='submit'>Отправить заявку</button>
-                </form>
+                <FormApl head={true}/>
             </Modal>
             <div className="description__wrapper container">
                 <h1>Анатолий Сухов — профессиональный ведущий мероприятий в Москве: свадьбы, дни рождения,

@@ -2,6 +2,7 @@ import './Services.scss'
 import Button from "../../Button/Button";
 import Modal from "../../Modal/Modal";
 import {useEffect, useState} from "react";
+import FormApl from "../../FormApl/FormApl";
 
 function Services() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -109,20 +110,13 @@ function Services() {
             setIsModalOpen={setIsModalAplOpen}
             type='apl'
             >
-                <form className='services__apl' action="">
-                    <p>Оставьте заявку и мы с вами свяжемся</p>
-                    <input type="text" placeholder='Ваше имя'/>
-                    <input type="text" placeholder='Номер телефона'/>
-                    <input type="text" placeholder='Email'/>
-                    <input type="text" placeholder='Сообщение'/>
-                    <button type='submit'>Отправить заявку</button>
-                </form>
+                <FormApl/>
             </Modal>
             <div className="services__wrapper container">
                 <div className="services__inner">
 
                     {servicesArr.map((item, index) => (
-                        <div className={`services__item bg_${index}`}>
+                        <div key={index} className={`services__item bg_${index}`}>
                             <div className="services__item-title">{item.title}</div>
                             <Button
                                 size='small'

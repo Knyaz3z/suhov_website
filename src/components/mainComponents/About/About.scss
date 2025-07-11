@@ -30,7 +30,7 @@
     @media (min-width: 1177px) {
       position: absolute;
       bottom: 0;
-      right: 21%;
+      right: 20%;
       max-width: 20em;
       max-height: 25em;
     }
@@ -65,7 +65,7 @@
   &__text {
     font-size: 2em;
     line-height: 1.2;
-    font-family: var(--font-heading);
+    font-family: var(--font-heading), serif;
     color: var(--accent-color);
     @media (min-width: 768px) {
       font-size: 3em;
@@ -110,7 +110,7 @@
 .about__glass {
   padding: 1em;
   border-radius: 1em;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
