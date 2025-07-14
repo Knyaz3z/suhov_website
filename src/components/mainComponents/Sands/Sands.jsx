@@ -14,7 +14,7 @@ function Sands() {
     }
 
     return (
-        <div className='main__sands'>
+        <div id='galery' className='main__sands'>
             <div className="sands__wrapper container ">
                 <div className='sands__head'>
                     <h2>Пески воспоминаний</h2>

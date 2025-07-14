@@ -38,6 +38,10 @@
     src: url('./fonts/DAMN.woff2') format('woff2');
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Цвета */
     --bg-color: #ECEBE6; /* Фон */
@@ -121,11 +125,16 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 1em;
     margin-top: 2em;
 
     p {
         font-size: 2em;
+
+        @media (max-width: 768px) {
+            font-size: 1em;
+        }
     }
 
     button{

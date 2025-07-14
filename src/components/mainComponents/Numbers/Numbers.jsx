@@ -41,7 +41,7 @@ function Numbers() {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <div className="main__numbers">
+        <div id='number' className="main__numbers">
 
             <Modal
                 isModalOpen={isModalOpen}
@@ -72,7 +72,7 @@ function Numbers() {
                 ))}
 
             </div>
-            <Button onClick={() => setIsModalOpen(true)} variant='primary' title='Получить уникальное предложение'/>
+            <Button onClick={() => setIsModalOpen(true)} variant='primary' title='Получить уникальное предложение' size='small'/>
         </div>
     );
 }

@@ -12,7 +12,7 @@ function About() {
                         Темп события. <br/>
                         Энергия присутствия. <br/></div>
 
-                    <Button variant='secondary' title='Посмотреть как это работает вживую'/>
+                    <Button variant='secondary' title='Посмотреть видео с мероприятий'/>
                 </div>
                 <img src="/about_photo_1.jpg" alt=""/>
                 <p>

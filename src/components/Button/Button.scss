@@ -18,9 +18,11 @@
 
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   }
+
   &.secondary:hover:not(.disabled) {
     color: #222222;
     transform: translateY(-5px) scale(1.02);
+
     .sand-particle {
       animation: sandFall 1.2s ease-out forwards;
 
@@ -37,9 +39,10 @@
     }
   }
 
-  &.dark{
+  &.dark {
     background-color: #222;
     color: #fafafa;
+
     &:hover:not(.disabled) {
       background-color: #fafafa;
       color: #222222;
@@ -108,8 +111,12 @@
     }
   }
 
-  &.small{
+  &.small {
     max-width: 17.3em;
     max-height: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

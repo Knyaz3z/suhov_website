@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+
+# Временный запрет индексации до готовности сайта
+# Удалите эти строки после завершения разработки
+Sitemap: https://suhov-vedet.ru/sitemap.xml

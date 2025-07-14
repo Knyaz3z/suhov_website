@@ -33,15 +33,15 @@ function Head() {
                         >
                             SUHOV
                         </motion.h2>
-                        <motion.h1
+                        <motion.h2
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
                             transition={{delay: 1, duration: 0.6}}
                             viewport={{once: true}}
                             className="subtitle"
-                        >ведущий на мероприятие <br/><span>без компромисса
+                        >ведущий на корпоратив <br/><span>без компромисса
                         </span>
-                        </motion.h1>
+                        </motion.h2>
                     </div>
 
                     <svg className="main__head-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 120"
@@ -65,7 +65,7 @@ function Head() {
                             viewport={{once: true}}
                             className="subtitle"
                         >
-                            лучшее решение <br/>для вашего счастья
+                            лучшее решение <br/>для вашего мероприятия
                         </motion.h2>
                     </div>
                 </div>
