@@ -28,6 +28,12 @@ function MainApl() {
         msg: false,
     })
 
+    const [submitStatus, setSubmitStatus] = useState({
+        success: false,
+        message: '',
+        show: false
+    });
+
     function validatePhone(phone) {
         const cleanPhone = phone.replace(/\D/g, '');
         return cleanPhone.length === 11;
@@ -43,31 +49,26 @@ function MainApl() {
         }
         let isValid = true
 
-        // name validation
         if (aplValue.name.length < 2) {
             newErrors.nameErr = touched.name ? 'error-name' : '';
             isValid = false;
         }
 
-        // phone validation
         if (!validatePhone(aplValue.tel)) {
             newErrors.telErr = touched.tel ? 'error-tel' : '';
             isValid = false;
         }
 
-        // select validation
         if (aplValue.event === '') {
             newErrors.eventErr = touched.event ? 'error-event' : '';
             isValid = false;
         }
 
-        // date validation
         if (aplValue.date === '') {
             newErrors.dateErr = touched.date ? 'error-date' : '';
             isValid = false;
         }
 
-        // message validation
         if (aplValue.msg.length > 500) {
             newErrors.msgErr = touched.msg ? 'error-msg' : '';
             isValid = false;
@@ -116,10 +117,10 @@ function MainApl() {
         validate();
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmitStatus(prev => ({...prev, show: false}));
 
-        // Mark all fields as touched on submit
         setTouched({
             name: true,
             tel: true,
@@ -129,8 +130,57 @@ function MainApl() {
         });
 
         if (validate()) {
-            // отправка формы
-            console.log('Форма отправлена:', aplValue);
+            try {
+                const response = await fetch('/send_main_form.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(aplValue),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    setSubmitStatus({
+                        success: true,
+                        message: 'Заявка успешно отправлена!',
+                        show: true
+                    });
+
+                    setAplValue({
+                        name: '',
+                        tel: '',
+                        event: '',
+                        date: '',
+                        msg: '',
+                    });
+                    setTouched({
+                        name: false,
+                        tel: false,
+                        event: false,
+                        date: false,
+                        msg: false,
+                    });
+
+                    setTimeout(() => {
+                        setSubmitStatus(prev => ({...prev, show: false}));
+                    }, 5000);
+                } else {
+                    setSubmitStatus({
+                        success: false,
+                        message: result.message || 'Ошибка при отправке формы',
+                        show: true
+                    });
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                setSubmitStatus({
+                    success: false,
+                    message: 'Произошла ошибка при отправке формы',
+                    show: true
+                });
+            }
         }
     }
 
@@ -143,6 +193,13 @@ function MainApl() {
             <div className="application__wrapper">
                 <div className="application__inner container">
                     <form onSubmit={handleSubmit}>
+                        {/* Уведомление об отправке */}
+                        {submitStatus.show && (
+                            <div className={`form__notification ${submitStatus.success ? 'success' : 'error'}`}>
+                                {submitStatus.message}
+                            </div>
+                        )}
+
                         {/* Имя */}
                         <input
                             name="name"

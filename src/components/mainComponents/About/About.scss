@@ -43,8 +43,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
     @media (min-width: 992px) {
       //display: block;
       order: initial;
@@ -79,6 +77,7 @@
     order: 2;
     width: 100%;
     max-width: 500px;
+    height: 550px;
     border-radius: 20px;
     @media (min-width: 992px) {
       order: initial;
@@ -95,12 +94,21 @@
     text-align: center;
     width: 100%;
     font-family: var(--font-decorative), serif;
+
+
+
+
     @media (min-width: 1172px) {
       position: absolute;
       bottom: 4%;
       right: 0;
       text-align: right;
       width: auto;
+      & span {
+        position: absolute;
+        transform: translateX(-200px);
+        white-space: nowrap;
+      }
     }
   }
 

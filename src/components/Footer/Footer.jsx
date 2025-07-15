@@ -12,13 +12,13 @@ function Footer() {
                 <div className="footer__content">
                     <div className="footer__contacts">
                         <h3 className="footer__title">Контакты</h3>
-                        <a href="tel:+78885554488" className="footer__contact-item">
+                        <a href="tel:+79957873116" className="footer__contact-item">
                             <FaPhone className="footer__contact-icon footer__contact-icon--phone" />
                             <span>+7 (995) 787 3116</span>
                         </a>
-                        <a href="mailto:hello@anatoliy.host" className="footer__contact-item">
+                        <a href="mailto:suhov.vedet@gmail.com" className="footer__contact-item">
                             <FaEnvelope className="footer__contact-icon footer__contact-icon--email" />
-                            <span>hello@anatoliy.host</span>
+                            <span>suhov.vedet@gmail.com</span>
                         </a>
                         <div className="footer__contact-item">
                             <FaGlobe className="footer__contact-icon footer__contact-icon--globe" />

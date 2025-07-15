@@ -14,9 +14,9 @@ function About() {
 
                     <Button variant='secondary' title='Посмотреть видео с мероприятий'/>
                 </div>
-                <img src="/about_photo_1.jpg" alt=""/>
+                <img src="/about_photo_1.webp" alt=""/>
                 <p>
-                    Анатолий остается в памяти. <br/>
+                    <span className='span'>Остаюсь в памяти,</span><br/>
                     Не только в кадре.
                 </p>
                 <div className='about__glass'>

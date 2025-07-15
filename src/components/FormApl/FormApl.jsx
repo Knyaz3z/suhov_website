@@ -24,6 +24,12 @@ function FormApl({head}) {
         msg: false,
     });
 
+    const [submitStatus, setSubmitStatus] = useState({
+        success: false,
+        message: '',
+        show: false
+    });
+
     function validatePhone(phone) {
         const cleanPhone = phone.replace(/\D/g, '');
         return cleanPhone.length === 11;
@@ -38,26 +44,22 @@ function FormApl({head}) {
         };
         let isValid = true;
 
-        // name validation
         if (aplValue.name.length < 2) {
             newErrors.name = touched.name ? 'Имя должно быть минимум 2 символа!' : '';
             isValid = false;
         }
 
-        // phone validation
         if (!validatePhone(aplValue.tel)) {
             newErrors.tel = touched.tel ? 'Ошибка в номере телефона' : '';
             isValid = false;
         }
 
-        // email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(aplValue.email)) {
             newErrors.email = touched.email ? 'Ошибка в email!' : '';
             isValid = false;
         }
 
-        // message validation
         if (aplValue.msg.length > 500) {
             newErrors.msg = touched.msg ? 'Сообщение не должно превышать 500 символов' : '';
             isValid = false;
@@ -91,10 +93,10 @@ function FormApl({head}) {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmitStatus(prev => ({...prev, show: false}));
 
-        // Mark all fields as touched on submit
         setTouched({
             name: true,
             tel: true,
@@ -103,8 +105,56 @@ function FormApl({head}) {
         });
 
         if (validate()) {
-            // Отправка данных
-            console.log('Форма отправлена:', aplValue);
+            try {
+                const response = await fetch('/send_form.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(aplValue),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    setSubmitStatus({
+                        success: true,
+                        message: 'Заявка успешно отправлена!',
+                        show: true
+                    });
+
+                    setAplValue({
+                        name: '',
+                        tel: '',
+                        email: '',
+                        msg: '',
+                    });
+                    setTouched({
+                        name: false,
+                        tel: false,
+                        email: false,
+                        msg: false,
+                    });
+
+                    // Скрываем сообщение через 5 секунд
+                    setTimeout(() => {
+                        setSubmitStatus(prev => ({...prev, show: false}));
+                    }, 5000);
+                } else {
+                    setSubmitStatus({
+                        success: false,
+                        message: result.message || 'Ошибка при отправке формы',
+                        show: true
+                    });
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                setSubmitStatus({
+                    success: false,
+                    message: 'Произошла ошибка при отправке формы',
+                    show: true
+                });
+            }
         }
     };
 
@@ -116,6 +166,13 @@ function FormApl({head}) {
         <form noValidate className='services__apl' onSubmit={handleSubmit}>
             {head && (
                 <p>Оставьте заявку и мы с вами свяжемся</p>
+            )}
+
+            {/* Блок уведомления */}
+            {submitStatus.show && (
+                <div className={`form__notification ${submitStatus.success ? 'success' : 'error'}`}>
+                    {submitStatus.message}
+                </div>
             )}
 
             <div className="form-group">

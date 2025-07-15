@@ -8,6 +8,7 @@ function Services() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isModalAplOpen, setIsModalAplOpen] = useState(false)
     const [selectedService, setSelectedService] = useState(null);
+    const [isSaleActive, setIsSaleActive] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const servicesArr =
@@ -22,7 +23,9 @@ function Services() {
                     '· Проведение мини-церемонии (5 минут);\n' +
                     '· Работа DJ - 4 часа;\n' +
                     '· Развлекательный контент (интерактивы от ведущего);\n' +
-                    '· Персонализированная анкета от DJ.'
+                    '· Персонализированная анкета от DJ.',
+                fullPrice: '60000',
+                lowPrice: '45000*'
             },
             {
                 title: 'PERSONAL',
@@ -36,7 +39,9 @@ function Services() {
                     '· Две консультации;\n' +
                     '· Проведение церемонии (15 минут);\n' +
                     '· Развлекательный контент (итерактивы) от ведущего;\n' +
-                    '· Типовой тайминг.'
+                    '· Типовой тайминг.',
+                fullPrice: '60000',
+                lowPrice: '45000*'
             },
             {
                 title: 'OLD MONEY',
@@ -52,7 +57,9 @@ function Services() {
                     '· Развлекательный контент (итерактивы) от ведущего;\n' +
                     '· Типовой тайминг;\n' +
                     '· Reels с Вашего события;\n' +
-                    '· Юмористическое интервью.'
+                    '· Юмористическое интервью.',
+                fullPrice: '60000',
+                lowPrice: '45000*'
             },
         ]
 
@@ -71,13 +78,6 @@ function Services() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % servicesArr.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + servicesArr.length) % servicesArr.length);
-    };
 
     return (
         <div className='main__services'>
@@ -95,20 +95,50 @@ function Services() {
                                 <p key={i}>{paragraph}</p>
                             ))}
                         </div>
-                        <Button
-                            onClick={() => setIsModalAplOpen(true)}
-                            title="Оставить заявку"
-                            variant="primary"
-                            className="service-modal__button"
-                        />
+
+                        <div className={`services-modal__price-container ${isSaleActive ? 'sale-active' : ''}`}>
+                            <div className="price-wrapper">
+                                <p className="full-price">Полная цена: {selectedService.fullPrice} руб.</p>
+                                <p className="sale-price">Бонусная цена: {selectedService.lowPrice} руб.</p>
+                            </div>
+                        </div>
+
+                        {isSaleActive ? (
+                            <Button
+                                onClick={() => setIsModalAplOpen(true)}
+                                title="Оставить заявку"
+                                variant="primary"
+                                className="service-modal__button"
+                            />
+                        ) : (
+                            <Button
+                                onClick={() => setIsSaleActive(true)}
+                                title="Хочу бонус"
+                                variant="primary"
+                                className="service-modal__button"
+                            />
+                        )}
+                        {
+                            isSaleActive ? (
+                                <span className='services-modal__alert'>
+                            <span onClick={()=>setIsSaleActive(false)}
+                                style={{fontSize: '1.2em', cursor: 'pointer'}}
+                            >Отменить участие в акции
+                            </span><br/>
+                            *при использовании акции вы даёте согласие на использование фото и видео материалов с вашего мероприятия для наполнения контента сайта или социальных сетей ведущего
+                        </span>
+                            ) : (
+                                ''
+                            )
+                        }
                     </div>
                 )}
             </Modal>
 
             <Modal
-            isModalOpen={isModalAplOpen}
-            setIsModalOpen={setIsModalAplOpen}
-            type='apl'
+                isModalOpen={isModalAplOpen}
+                setIsModalOpen={setIsModalAplOpen}
+                type='apl'
             >
                 <FormApl/>
             </Modal>
