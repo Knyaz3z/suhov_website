@@ -47,7 +47,7 @@ html{
     --bg-color: #ECEBE6; /* Фон */
     --text-main: #222222; /* Основной текст */
     --text-secondary: #333333; /* Вторичный текст */
-    --accent-color: #9F463F; /* Акцентный цвет */
+    --accent-color: #9f463f; /* Акцентный цвет */
 
     /* Шрифты */
     --font-main: 'Montserrat Regular';

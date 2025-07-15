@@ -86,21 +86,32 @@
 
 
     &-how {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: start;
+      justify-content: center;
       padding: .5em 1em;
       margin-top: 1em;
       border-radius: 15px;
       width: 100%;
-      background: #333;
-      color: #fafafa;
+      background: #fafafa;
+      color: #222222;
+      overflow: hidden;
+      min-height: 7em;
 
-      & span {
-        background-color: #fafafa;
-        color: #222222;
-        padding: .25em;
+      &--span {
+
+        color: #7e683a;
+        //padding: .25em;
         border-radius: 10px;
+        font-size: 10em;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-52%);
+        opacity: .2;
+        //z-index: -1;
       }
       @media (max-width: 768px) {
         font-size: .8em;
