@@ -65,53 +65,79 @@ function Head() {
 
             {/* Разбросанные фотографии */}
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:5}}
-                transition={{delay: 0, duration: 0.3}}
+                whileInView={{opacity: 1, y: 0, rotate: 5}}
+                // transition={{duration: 0.3}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_1.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-1"/>
+                className="main__head-photo photo-1"
+                fetchPriority="high"
+
+            />
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:5}}
-                transition={{delay: 0, duration: 0.5}}
+                whileInView={{opacity: 1, y: 0, rotate: 5}}
+                // transition={{duration: 0.5}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_2.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-2"/>
+                className="main__head-photo photo-2"
+            />
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:-5}}
-                transition={{delay: 0, duration: 0.3}}
+                whileInView={{opacity: 1, y: 0, rotate: -5}}
+                // transition={{duration: 0.3}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_3.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-3"/>
+                className="main__head-photo photo-3"
+            />
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:-5}}
-                transition={{delay: 0, duration: 0.5}}
+                whileInView={{opacity: 1, y: 0, rotate: -5}}
+                // transition={{duration: 0.5}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_4.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-4"/>
+                className="main__head-photo photo-4"
+            />
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:10}}
-                transition={{delay: 0, duration: 0.5}}
+                whileInView={{opacity: 1, y: 0, rotate: 10}}
+                // transition={{duration: 0.5}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_5.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-5"/>
+                className="main__head-photo photo-5"
+            />
             <motion.img
+                style={{willChange: 'transform, opacity'}}
                 initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0, rotate:-5}}
-                transition={{delay: 0, duration: 0.3}}
+                whileInView={{opacity: 1, y: 0, rotate: -5}}
+                // transition={{duration: 0.3}}
                 viewport={{once: true}}
+                width='300'
+                height='300'
                 src="/head_photo_6.webp"
                 alt="Сухов Анатлий — профессиональный ведущий мероприятий"
-                className="main__head-photo photo-6"/>
+                className="main__head-photo photo-6"
+            />
 
             {/* Центральный блок с текстом */}
             <div className="main__head-inner">
@@ -121,7 +147,10 @@ function Head() {
                         <motion.h2
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
-                            transition={{delay: .3, duration: 0.6}}
+                            transition={{
+                                type: "tween",
+                                ease: "easeOut"
+                            }}
                             viewport={{once: true}}
                         >
                             SUHOV
@@ -129,7 +158,10 @@ function Head() {
                         <motion.h2
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
-                            transition={{delay: 1, duration: 0.6}}
+                            transition={{
+                                type: "tween",
+                                ease: "easeOut"
+                            }}
                             viewport={{once: true}}
                             className="subtitle"
                         >ведущий на корпоратив <br/><span>без компромисса
@@ -146,7 +178,10 @@ function Head() {
                         <motion.h2
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
-                            transition={{delay: .5, duration: 0.6}}
+                            transition={{
+                                type: "tween",
+                                ease: "easeOut"
+                            }}
                             viewport={{once: true}}
                             onMouseEnter={meroVisible}
                             onMouseLeave={meroHidden}
@@ -159,7 +194,10 @@ function Head() {
                         <motion.h2
                             initial={{opacity: 0, y: 50}}
                             whileInView={{opacity: 1, y: 0}}
-                            transition={{delay: 1, duration: 0.6}}
+                            transition={{
+                                type: "tween",
+                                ease: "easeOut"
+                            }}
                             viewport={{once: true}}
                             className="subtitle"
                         >

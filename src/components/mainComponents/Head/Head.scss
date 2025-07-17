@@ -105,6 +105,10 @@ $shadow-sand: 0 4px 12px rgba(159, 70, 63, 0.2);
 
     // Медиазапросы для адаптации размеров
     @media (min-width: 768px) {
+      .main__head-photo {
+        will-change: none; // Удалите или ограничьте will-change
+        filter: none; // Упростите фильтры для мобильных
+      }
       width: 180px;
       height: 250px;
     }

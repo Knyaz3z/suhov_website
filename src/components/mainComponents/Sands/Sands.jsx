@@ -63,7 +63,7 @@ function SandsItem({title, imgLink, desc, imgVideoLink, isModalOpen, setIsModalO
     return (
         <div className="sands__item">
             <div onClick={onGalleryItemClick} className="sands__item-photo">
-                <h5>{title}</h5>
+                <p>{title}</p>
                 <div className='sands__image-container'>
                     <img src={imgLink} alt="photo"/>
                 </div>
@@ -110,7 +110,6 @@ function GalleryModal({modalId, isModalOpen, setIsModalOpen}) {
                     key={img.id}
                     src={img.src}
                     alt={img.alt}
-                    loading='lazy'
                 />
             ))}
 

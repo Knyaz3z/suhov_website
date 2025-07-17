@@ -17,6 +17,7 @@
   &__wrapper {
     background: url("/about_bg.webp") center/cover no-repeat;
     width: 100%;
+    overflow: hidden;
   }
 
   &__glass {
