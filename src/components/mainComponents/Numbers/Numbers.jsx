@@ -27,7 +27,7 @@ function Numbers() {
             text: 'Раз',
         },
         {
-            number: '∞',
+            number: <img src="/infinity.svg" alt="знак бесконечность"/>,
             onHover: 'это не преувеличение. Просто никто не считал.',
             text: 'Эмоций',
         },
@@ -51,6 +51,7 @@ function Numbers() {
                 <FormApl head={true}/>
             </Modal>
             <div className="numbers__wrapper container">
+
                 {numbersArr.map((item, index) => (
                     <div
                         key={index}

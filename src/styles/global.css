@@ -47,6 +47,7 @@
 
 html{
     scroll-behavior: smooth;
+
 }
 
 :root {
@@ -134,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     text-align: center;
     gap: 1em;
-    margin-top: 2em;
+    margin: 6em auto;
 
     p {
         font-size: 2em;
@@ -150,8 +151,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__apl-head{
-    font-size: 3em;
+    margin: 2em auto;
+    font-size: 2em;
     color: var(--accent-color);
-    font-family: var(--font-decorative), serif;
+    font-family: var(--font-heading), serif;
     text-align: center;
 }

@@ -3,14 +3,11 @@
   width: 100%;
   margin-top: 2em;
   padding: 1.5em;
-
 }
 
 .description {
-
   &__wrapper {
-
-    & h1 {
+    h1 {
       color: #333;
       font-family: 'Montserrat Bold', sans-serif;
       font-size: 3.2em;
@@ -27,10 +24,10 @@
       }
     }
 
-    & h3 {
-      margin-top: .5em;
+    .description__subtitle {
+      margin-top: 0.5em;
 
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         font-size: 3em;
       }
     }
@@ -45,45 +42,41 @@
     @media (max-width: 1072px) {
       flex-direction: column;
       align-items: center;
-      font-size: .8em;
+      font-size: 0.8em;
     }
 
-    & img {
+    img {
       object-fit: cover;
       max-width: 21em;
       width: 100%;
-      border-radius: 20px;
-
+      border-radius: 1em;
     }
 
     &-text {
-      text-align: right;
+      text-align: left;
       display: flex;
       flex-direction: column;
       gap: 2em;
 
-
-
-      & div:first-child {
+      p:first-child {
         background-color: var(--accent-color);
         color: #fafafa;
         padding: 1.5em;
         border-radius: 20px;
+        text-align: left;
       }
 
-      & div:nth-child(2) {
+      p:nth-child(2) {
         text-align: left;
       }
     }
   }
 
-
   &__work {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
+    gap: 1em;
 
     &-how {
       position: relative;
@@ -91,7 +84,7 @@
       flex-direction: column;
       align-items: start;
       justify-content: center;
-      padding: .5em 1em;
+      padding: 1.5em;
       margin-top: 1em;
       border-radius: 15px;
       width: 100%;
@@ -99,25 +92,32 @@
       color: #222222;
       overflow: hidden;
       min-height: 7em;
+      line-height: 1.5;
 
-      &--span {
-
-        color: #7e683a;
-        //padding: .25em;
-        border-radius: 10px;
-        font-size: 10em;
-        position: absolute;
-        top: 50%;
-        left: 5%;
-        transform: translateY(-52%);
-        opacity: .2;
-        //z-index: -1;
+      & button {
+        margin-top: 0 !important;
       }
+
+      strong {
+        font-weight: 700;
+      }
+
+      //& span {
+      //  color: #7e683a;
+      //  font-size: 5em;
+      //  position: absolute;
+      //  top: 50%;
+      //  left: 5%;
+      //  transform: translateY(-52%);
+      //  opacity: 0.2;
+      //  z-index: 0;
+      //  pointer-events: none;
+      //}
+
       @media (max-width: 768px) {
-        font-size: .8em;
+        font-size: 0.8em;
+        padding: 1em;
       }
     }
   }
-
-
 }

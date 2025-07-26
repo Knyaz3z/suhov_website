@@ -44,6 +44,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    // Кнопка
+    button {
+      width: 100%;
+      margin-top: 2em;
+      @media (min-width: 576px) {
+        width: auto;
+        min-width: 300px;
+
+      }
+    }
     @media (min-width: 992px) {
       //display: block;
       order: initial;
@@ -66,6 +76,10 @@
     line-height: 1.2;
     font-family: var(--font-heading), serif;
     color: var(--accent-color);
+
+
+
+
     @media (min-width: 768px) {
       font-size: 3em;
     }
@@ -102,7 +116,7 @@
     @media (min-width: 1172px) {
       position: absolute;
       bottom: 4%;
-      right: 0;
+      right: 1em;
       text-align: right;
       width: auto;
       & span {
@@ -135,28 +149,8 @@
     }
   }
 
-  span {
-    font-size: 1.5em;
-    font-family: 'Ink Free', serif;
-    @media (min-width: 768px) {
-      font-size: 2em;
-    }
-  }
-
   @media (min-width: 768px) {
     order: initial;
     margin-top: 0;
   }
-}
-
-// Кнопка
-.button {
-  width: 100%;
-  margin-top: 2em;
-  @media (min-width: 576px) {
-    width: auto;
-    min-width: 300px;
-
-  }
-
 }

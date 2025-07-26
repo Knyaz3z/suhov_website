@@ -7,7 +7,7 @@ function About() {
         <div className='about__wrapper'>
             <div className='about container'>
                 <div className="about__content">
-                    <div className="about__title">ABOUT ME</div>
+                    <div className="about__title">Обо мне</div>
                     <div className="about__text">Голос пространства. <br/>
                         Темп события. <br/>
                         Энергия присутствия. <br/></div>
@@ -23,13 +23,11 @@ function About() {
                     <div className='about__glass-content'>
                         Умею быть тишиной, когда в ней нуждается момент.
                         <br/><br/>
-                        Голосом - когда он должен прозвучать вовремя.
+                        Голосом — когда он должен прозвучать вовремя.
                         <br/><br/>
-                        Ведущий — не просто сценарий и тайминг. Я тот, кто создаёт
+                        Ведущий — не про сценарий и тайминг. Ведущий про воплощение желаний
                         <br/><br/>
-                        <span>Ритм события</span>
-                        <br/><br/>
-                        Работаю с людьми - не с микрофоном.
+                        Работаю с людьми — не с микрофоном.
                     </div>
                 </div>
             </div>
