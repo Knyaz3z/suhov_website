@@ -3,6 +3,7 @@ import './Head.scss';
 import {motion} from "motion/react";
 import {FaPhone} from "react-icons/fa";
 
+
 function Head() {
 
     const [isMeroVisible, setIsMeroVisible] = useState(false)

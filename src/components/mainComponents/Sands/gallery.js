@@ -2,9 +2,9 @@ const gallery =
     [
         {
             id: 1,
-            items: Array.from({ length: 4 }, (_, i) => ({
+            items: Array.from({ length: 18 }, (_, i) => ({
                 id: i+1,
-                src: `/gallery/event1/gallery_photo_${i+1}.png`,
+                src: `/gallery/event1/gallery_photo_${i+1}.webp`,
                 alt: `Memory photo ${i+1}`
             }))
         },
