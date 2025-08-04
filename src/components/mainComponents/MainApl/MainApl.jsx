@@ -8,7 +8,7 @@ function MainApl() {
         name: '',
         tel: '',
         event: '',
-        date: '',
+        date: getTodayDate(),
         msg: '',
     })
 
@@ -33,6 +33,14 @@ function MainApl() {
         message: '',
         show: false
     });
+
+    function getTodayDate() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
 
     function validatePhone(phone) {
         const cleanPhone = phone.replace(/\D/g, '');

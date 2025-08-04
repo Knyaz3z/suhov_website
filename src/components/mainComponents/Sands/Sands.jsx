@@ -10,6 +10,7 @@ const galleryData = [
         imgLink: '/sand_of_memories_photo_1.webp',
         imgVideoLink: '/sand_of_memories_video_1.webp',
         desc: 'Голос в зале',
+        videoSrc: '/video/video_1.mov' // Добавляем путь к видео
     },
     {
         id: 2,
@@ -17,6 +18,7 @@ const galleryData = [
         imgLink: '/sand_of_memories_photo_2.webp',
         imgVideoLink: '/sand_of_memories_video_2.webp',
         desc: 'Согласен',
+        videoSrc: '/video/video_2.mov'
     },
     {
         id: 3,
@@ -24,16 +26,24 @@ const galleryData = [
         imgLink: '/sand_of_memories_photo_3.webp',
         imgVideoLink: '/sand_of_memories_video_3.webp',
         desc: 'Мои друзья',
+        videoSrc: '/video/video_3.mov'
     },
 ]
 
 function Sands() {
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isVideoModalOpen, setIsVideoModalOpen] = useState(false) // Новое состояние для видео
     const [modalId, setModalId] = useState(0)
+    const [currentVideo, setCurrentVideo] = useState('') // Для хранения текущего видео
 
     const handleGalleryClick = (id) => {
         setIsModalOpen(true)
         setModalId(id)
+    }
+
+    const handleVideoClick = (videoSrc) => {
+        setCurrentVideo(videoSrc)
+        setIsVideoModalOpen(true)
     }
 
     return (
@@ -51,12 +61,24 @@ function Sands() {
                     setIsModalOpen={setIsModalOpen}
                 />
 
+                {/* Модальное окно для видео */}
+                <Modal isModalOpen={isVideoModalOpen} setIsModalOpen={setIsVideoModalOpen} type="video">
+                    <div className="about__video-wrapper">
+                        <video controls autoPlay>
+                            <source src={currentVideo} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </Modal>
+
                 <div className="sands__inner">
-                    {galleryData.map(({ id, ...item }) => (
+                    {galleryData.map(({ id, videoSrc, ...item }) => (
                         <SandsItem
                             key={id}
                             {...item}
+                            videoSrc={videoSrc}
                             onGalleryItemClick={() => handleGalleryClick(id)}
+                            onVideoClick={() => handleVideoClick(videoSrc)}
                         />
                     ))}
                 </div>
@@ -65,7 +87,7 @@ function Sands() {
     )
 }
 
-function SandsItem({ title, imgLink, desc, imgVideoLink, onGalleryItemClick }) {
+function SandsItem({ title, imgLink, desc, imgVideoLink, onGalleryItemClick, onVideoClick }) {
     return (
         <div className="sands__item">
             <div onClick={onGalleryItemClick} className="sands__item-photo">
@@ -77,7 +99,15 @@ function SandsItem({ title, imgLink, desc, imgVideoLink, onGalleryItemClick }) {
             </div>
             <div className="sands__item-video">
                 <img src={imgVideoLink} alt="" />
-                <img src="/play_btn.svg" alt="Play button" className="play__btn" />
+                <img
+                    src="/play_btn.svg"
+                    alt="Play button"
+                    className="play__btn"
+                    onClick={(e) => {
+                        e.stopPropagation(); // Предотвращаем всплытие события
+                        onVideoClick();
+                    }}
+                />
             </div>
         </div>
     )

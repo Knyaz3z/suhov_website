@@ -105,15 +105,24 @@ function Services() {
                                 onClick={() => setIsModalAplOpen(true)}
                                 title="Оставить заявку"
                                 variant="primary"
-                                className="service-modal__button"
+                                className="services-modal__button"
                             />
                         ) : (
-                            <Button
-                                onClick={() => setIsSaleActive(true)}
-                                title="Хочу бонус"
-                                variant="primary"
-                                className="service-modal__button"
-                            />
+                            <div id='bonus'>
+                                <Button
+                                    onClick={() => setIsSaleActive(true)}
+                                    title="Хочу бонус"
+                                    variant="primary"
+                                    className="services-modal__button"
+                                />
+                                <Button
+                                    onClick={() => setIsModalAplOpen(true)}
+                                    title="Оставить заявку"
+                                    variant="primary"
+                                    className="services-modal__button"
+                                />
+                            </div>
+
                         )}
                         {
                             isSaleActive ? (
