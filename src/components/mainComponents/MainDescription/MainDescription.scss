@@ -10,17 +10,18 @@
     h1 {
       color: #333;
       font-family: 'Montserrat Bold', sans-serif;
-      font-size: 3.2em;
+      font-size: 3em;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+
 
       @media (max-width: 1072px) {
         font-size: 2em;
       }
 
       @media (max-width: 578px) {
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
     }
 

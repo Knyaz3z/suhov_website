@@ -7,11 +7,11 @@ import FormApl from "../../FormApl/FormApl";
 function Present() {
     const presentArr = [
         {
-            title: 'Бесплатный фотограф',
+            title: 'Юмористическое интервью в подарок',
             imgLink: '/presents_1.webp',
         },
         {
-            title: 'Бесплатный диджей',
+            title: 'Бесплатный сет от диджея',
             imgLink: '/presents_2.webp',
 
         },

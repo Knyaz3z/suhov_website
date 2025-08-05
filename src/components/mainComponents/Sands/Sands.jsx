@@ -17,7 +17,7 @@ const galleryData = [
         title: 'Глава II',
         imgLink: '/sand_of_memories_photo_2.webp',
         imgVideoLink: '/sand_of_memories_video_2.webp',
-        desc: 'Согласен',
+        desc: 'Согласна',
         videoSrc: '/video/video_2.mov'
     },
     {
@@ -25,7 +25,7 @@ const galleryData = [
         title: 'Глава III',
         imgLink: '/sand_of_memories_photo_3.webp',
         imgVideoLink: '/sand_of_memories_video_3.webp',
-        desc: 'Мои друзья',
+        desc: 'Наша атмосфера',
         videoSrc: '/video/video_3.mov'
     },
 ]

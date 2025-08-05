@@ -27,7 +27,7 @@ function About() {
                 <img src="/about_photo_1.webp" alt="Обо мне" />
 
                 <p>
-                    <span className='span'>Остаюсь в памяти,</span><br />
+                    <span className='span'>Оставляю эмоции в памяти,</span><br />
                     Не только в кадре.
                 </p>
 

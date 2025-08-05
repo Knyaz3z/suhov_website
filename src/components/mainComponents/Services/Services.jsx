@@ -14,7 +14,7 @@ function Services() {
     const servicesArr =
         [
             {
-                title: 'COZY',
+                title: 'Камерный',
                 backgroundImgSrc: '/services_bg_0.webp',
                 fullDescription: '· Работа ведущего 4 часа; \n' +
                     '· Типовой тайминг; \n' +
@@ -27,7 +27,7 @@ function Services() {
                 lowPrice: '45000*'
             },
             {
-                title: 'PERSONAL',
+                title: 'Кастомный',
                 backgroundImgSrc: '/services_bg_1.webp',
                 fullDescription: '· Работа ведущего - 5 часов;\n' +
                     '· Работа DJ - 6 часов;\n' +
@@ -42,7 +42,7 @@ function Services() {
                 lowPrice: '60000*'
             },
             {
-                title: 'OLD MONEY',
+                title: 'Old Money',
                 backgroundImgSrc: '/services_bg_2.webp',
                 fullDescription: '· Работа ведущего - 7 часов;\n' +
                     '· Работа DJ - 8 часов;\n' +

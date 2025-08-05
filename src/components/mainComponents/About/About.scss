@@ -18,6 +18,7 @@
     background: url("/about_bg.webp") center/cover no-repeat;
     width: 100%;
     overflow: hidden;
+    padding-bottom: 1.5em;
   }
 
   &__glass {
@@ -109,19 +110,19 @@
     text-align: center;
     width: 100%;
     font-family: var(--font-decorative), serif;
-
-
+    font-size: 1em;
 
 
     @media (min-width: 1172px) {
       position: absolute;
-      bottom: 4%;
+      bottom: 6%;
       right: 1em;
       text-align: right;
       width: auto;
+      font-size: .8em;
       & span {
         position: absolute;
-        transform: translateX(-200px);
+        transform: translateX(-195px);
         white-space: nowrap;
       }
     }

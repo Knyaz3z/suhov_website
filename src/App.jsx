@@ -47,7 +47,7 @@ function App() {
                         variant='primary'/>
                 </div>
                 <Present/>
-                <h3 className='main__apl-head container'>Отправьте послание сквозь Пространство</h3>
+                <h3 className='main__apl-head container'>Отправьте послание сквозь пространство</h3>
                 <MainApl/>
             </main>
 
