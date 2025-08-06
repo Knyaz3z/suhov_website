@@ -33,7 +33,7 @@ if (strlen($phone) !== 11) {
 }
 
 // Подготовка письма
-$to = 'm.finageev@mail.ru';
+$to = 'suhov.vedet@gmail.com';
 $subject = 'Новая заявка с сайта '.$_SERVER['HTTP_HOST'];
 $message = "
 <html>

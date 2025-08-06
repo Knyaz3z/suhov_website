@@ -165,7 +165,7 @@ function Head() {
                             }}
                             viewport={{once: true}}
                             className="subtitle"
-                        >ведущий на корпоратив <br/><br/>
+                        >ведущий на корпоратив <br/>и другие мероприятия
                         </motion.h2>
                     </div>
 

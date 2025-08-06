@@ -21,7 +21,7 @@ if (strlen($phone) !== 11) {
 }
 
 // Подготовка письма
-$to = 'm.finageev@mail.ru'; // Замените на нужный email
+$to = 'suhov.vedet@gmail.com'; // Замените на нужный email
 $subject = 'Новая заявка на мероприятие с сайта '.$_SERVER['HTTP_HOST'];
 $message = "
 <html>
