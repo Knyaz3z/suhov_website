@@ -19,8 +19,9 @@ function About() {
 
                     <Button
                         variant='secondary'
-                        title='Посмотреть видео с мероприятий'
+                        title='Посмотреть видео обо мне'
                         onClick={() => setIsModalOpen(true)}
+                        size='large'
                     />
                 </div>
 
@@ -48,7 +49,7 @@ function About() {
             <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} type="video">
                 <div className="about__video-wrapper">
                     <video controls autoPlay>
-                        <source src="/video/video_1.mov" type="video/mp4" />
+                        <source src="/video/video_about.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
