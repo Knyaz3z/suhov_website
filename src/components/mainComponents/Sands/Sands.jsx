@@ -115,32 +115,34 @@ function SandsItem({ title, imgLink, desc, imgVideoLink, onGalleryItemClick, onV
 
 function GalleryModal({ modalId, isModalOpen, setIsModalOpen }) {
     const currentGallery = gallery.find(g => g.id === modalId)
-    const [imageIdOpen, setImageOpen] = useState(0)
+    const [imageIndex, setImageIndex] = useState(0)
     const [isModalImgOpen, setIsModalImgOpen] = useState(false)
 
     if (!currentGallery) return null
 
-    const openImage = (id) => {
+    const openImage = (index) => {
+        setImageIndex(index)
         setIsModalImgOpen(true)
-        setImageOpen(id - 1)
     }
 
     const changeImage = (dir) => {
-        setImageOpen((prev) =>
+        setImageIndex((prev) =>
             (prev + dir + currentGallery.items.length) % currentGallery.items.length
         )
     }
 
     return (
         <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} type='gallery'>
-            {currentGallery.items.map((img) => (
-                <img
-                    key={img.id}
-                    src={img.src}
-                    alt={img.alt}
-                    onClick={() => openImage(img.id)}
-                />
-            ))}
+            <div className="gallery__thumbnails">
+                {currentGallery.items.map((img, index) => (
+                    <img
+                        key={img.id}
+                        src={img.src}
+                        alt={img.alt}
+                        onClick={() => openImage(index)} // используем индекс вместо id
+                    />
+                ))}
+            </div>
 
             {isModalImgOpen && (
                 <div className="img__modal-overlay">
@@ -157,7 +159,7 @@ function GalleryModal({ modalId, isModalOpen, setIsModalOpen }) {
                             </svg>
                         </button>
                         <button onClick={() => changeImage(-1)} className="img__modal-btn prev">←</button>
-                        <img className='img__modal-img' src={currentGallery.items[imageIdOpen].src} alt="" />
+                        <img className='img__modal-img' src={currentGallery.items[imageIndex].src} alt="" />
                         <button onClick={() => changeImage(1)} className="img__modal-btn next">→</button>
                     </div>
                 </div>
