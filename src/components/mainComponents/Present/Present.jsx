@@ -38,6 +38,9 @@ function Present() {
                     <FormApl head={false}/>
                     <input type="hidden" name="gift"
                            value={selectedGift !== null ? presentArr[selectedGift].title : ''}/>
+                {
+                    selectedGift === 2 ? <span style={{fontSize: '.75em'}}>*Акция не суммируются с тарифными акциями</span> : ''
+                }
             </Modal>
 
             <div className="presents__wrapper ">
