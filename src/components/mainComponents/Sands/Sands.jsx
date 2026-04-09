@@ -20,14 +20,14 @@ const galleryData = [
         desc: 'Согласна',
         videoSrc: '/video/video_2.mov'
     },
-    {
-        id: 3,
-        title: 'Глава III',
-        imgLink: '/sand_of_memories_photo_3.webp',
-        imgVideoLink: '/sand_of_memories_video_3.webp',
-        desc: 'Наша атмосфера',
-        videoSrc: '/video/video_3.mov'
-    },
+    // {
+    //     id: 3,
+    //     title: 'Глава III',
+    //     imgLink: '/sand_of_memories_photo_3.webp',
+    //     imgVideoLink: '/sand_of_memories_video_3.webp',
+    //     desc: 'Наша атмосфера',
+    //     videoSrc: '/video/video_3.mov'
+    // },
 ]
 
 function Sands() {
@@ -70,6 +70,9 @@ function Sands() {
                         </video>
                     </div>
                 </Modal>
+
+                <video preload="none" className={'video'} controls src={'/video/humor_interview.mp4'} poster={'/video/poster.jpg'}>
+                </video>
 
                 <div className="sands__inner">
                     {galleryData.map(({ id, videoSrc, ...item }) => (

@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     text-align: center;
     gap: 1em;
-    margin: 6em auto;
+    margin: 3em auto;
 
     p {
         font-size: 2em;
@@ -151,9 +151,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__apl-head{
-    margin: 2em auto;
-    font-size: 2em;
+    margin: 1em auto;
+    font-size: 1.5em;
     color: var(--accent-color);
     font-family: var(--font-heading), serif;
     text-align: center;
+}
+
+.cta_btn{
+    margin: 0 auto 1em auto;
+}
+.cta_btn_2{
+    margin: 1em auto 0 auto;
 }

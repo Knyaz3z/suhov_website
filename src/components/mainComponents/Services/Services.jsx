@@ -23,8 +23,6 @@ function Services() {
                     '· Работа DJ - 4 часа;\n' +
                     '· Развлекательный контент (интерактивы от ведущего);\n' +
                     '· Персонализированная анкета от DJ.',
-                fullPrice: '60000',
-                lowPrice: '45000*'
             },
             {
                 title: 'Кастомный',
@@ -38,8 +36,6 @@ function Services() {
                     '· Проведение церемонии (15 минут);\n' +
                     '· Развлекательный контент (итерактивы) от ведущего;\n' +
                     '· Типовой тайминг.',
-                fullPrice: '80000',
-                lowPrice: '60000*'
             },
             {
                 title: 'Old Money',
@@ -55,8 +51,6 @@ function Services() {
                     '· Типовой тайминг;\n' +
                     '· Reels с Вашего события;\n' +
                     '· Юмористическое интервью.',
-                fullPrice: '115000',
-                lowPrice: '90000*'
             },
         ]
 
@@ -93,13 +87,6 @@ function Services() {
                             ))}
                         </div>
 
-                        <div className={`services-modal__price-container ${isSaleActive ? 'sale-active' : ''}`}>
-                            <div className="price-wrapper">
-                                <p className="full-price">Полная цена: {selectedService.fullPrice} руб.</p>
-                                <p className="sale-price">Бонусная цена: {selectedService.lowPrice} руб.</p>
-                            </div>
-                        </div>
-
                         {isSaleActive ? (
                             <Button
                                 onClick={() => setIsModalAplOpen(true)}
@@ -109,12 +96,6 @@ function Services() {
                             />
                         ) : (
                             <div id='bonus'>
-                                <Button
-                                    onClick={() => setIsSaleActive(true)}
-                                    title="Хочу бонус"
-                                    variant="primary"
-                                    className="services-modal__button"
-                                />
                                 <Button
                                     onClick={() => setIsModalAplOpen(true)}
                                     title="Оставить заявку"

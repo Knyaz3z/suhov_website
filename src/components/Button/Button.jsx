@@ -9,7 +9,8 @@ function Button({
                     size,
                     disabled,
                     color,
-                    className
+                    className,
+                    href,
                 }) {
     return (
         <button
@@ -17,9 +18,9 @@ function Button({
             onClick={onClick}
             disabled={disabled}
         >
-      <span className="button__content">
+            <a href={href} className="button__content" target={'_blank'}>
         {title}
-      </span>
+            </a>
             <span className="button__sand-effect">
         {/* Песчаные частицы */}
                 {[...Array(20)].map((_, i) => (
